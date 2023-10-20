@@ -17,7 +17,7 @@ public class Util {
             databaseProperties.load(in);
             Connection connection = DriverManager.getConnection(databaseProperties.getProperty("url"),
                     databaseProperties.getProperty("username"), databaseProperties.getProperty("password"));
-            connection.setAutoCommit(false);
+            connection.setAutoCommit(true);
             return connection;
         } catch (IOException | SQLException e) {
             throw new RuntimeException(e);
